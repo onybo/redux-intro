@@ -37,8 +37,8 @@ export default {
         collapseWhitespace: true
       },
       inject: true
-    }),
-    new BundleAnalyzerPlugin()
+    }) //,
+    // new BundleAnalyzerPlugin()
   ],
   module: {
     loaders: [
