@@ -1,0 +1,5 @@
+{
+  "port": 3010,
+  "delay": 10,
+  "watch": true
+}
