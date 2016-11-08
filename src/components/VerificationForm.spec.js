@@ -2,11 +2,11 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {expect} from 'chai';
 import sinon from 'sinon';
-import FuelSavingsForm from './FuelSavingsForm';
+import VerificationForm from './VerificationForm';
 import FuelSavingsTextInput from './FuelSavingsTextInput';
 import FuelSavingsResults from './FuelSavingsResults';
 
-describe('<FuelSavingsForm />', () => {
+describe('<VerificationForm />', () => {
   it('should contain <FuelSavingsTextInput /> components', () => {
     const saveFuelSavings = () => {};
     const calculateFuelSavings = () => {};
@@ -27,7 +27,7 @@ describe('<FuelSavingsForm />', () => {
       }
     };
 
-    const wrapper = shallow(<FuelSavingsForm
+    const wrapper = shallow(<VerificationForm
       saveFuelSavings={saveFuelSavings}
       calculateFuelSavings={calculateFuelSavings}
       fuelSavings={fuelSavings}
@@ -67,7 +67,7 @@ describe('<FuelSavingsForm />', () => {
       }
     };
 
-    const wrapper = shallow(<FuelSavingsForm
+    const wrapper = shallow(<VerificationForm
       saveFuelSavings={saveFuelSavings}
       calculateFuelSavings={calculateFuelSavings}
       fuelSavings={fuelSavings}
@@ -101,7 +101,7 @@ describe('<FuelSavingsForm />', () => {
       }
     };
 
-    const wrapper = shallow(<FuelSavingsForm
+    const wrapper = shallow(<VerificationForm
       saveFuelSavings={saveFuelSavings}
       calculateFuelSavings={calculateFuelSavings}
       fuelSavings={fuelSavings}
@@ -131,7 +131,7 @@ describe('<FuelSavingsForm />', () => {
       }
     };
 
-    const wrapper = shallow(<FuelSavingsForm
+    const wrapper = shallow(<VerificationForm
       saveFuelSavings={saveFuelSavings}
       calculateFuelSavings={calculateFuelSavings}
       fuelSavings={fuelSavings}
@@ -161,7 +161,7 @@ describe('<FuelSavingsForm />', () => {
       }
     };
 
-    const wrapper = shallow(<FuelSavingsForm
+    const wrapper = shallow(<VerificationForm
       saveFuelSavings={saveFuelSavings}
       calculateFuelSavings={calculateFuelSavings}
       fuelSavings={fuelSavings}
@@ -192,7 +192,7 @@ describe('<FuelSavingsForm />', () => {
       }
     };
 
-    const wrapper = shallow(<FuelSavingsForm
+    const wrapper = shallow(<VerificationForm
       saveFuelSavings={saveFuelSavings}
       calculateFuelSavings={calculateFuelSavings}
       fuelSavings={fuelSavings}
@@ -223,7 +223,7 @@ describe('<FuelSavingsForm />', () => {
       }
     };
 
-    const wrapper = shallow(<FuelSavingsForm
+    const wrapper = shallow(<VerificationForm
       saveFuelSavings={saveFuelSavings}
       calculateFuelSavings={calculateFuelSavings}
       fuelSavings={fuelSavings}
@@ -254,7 +254,7 @@ describe('<FuelSavingsForm />', () => {
       }
     };
 
-    const wrapper = shallow(<FuelSavingsForm
+    const wrapper = shallow(<VerificationForm
       saveFuelSavings={saveFuelSavings}
       calculateFuelSavings={calculateFuelSavings}
       fuelSavings={fuelSavings}
