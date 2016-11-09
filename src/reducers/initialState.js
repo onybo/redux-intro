@@ -5,5 +5,8 @@ export default {
     number: '',
     name: ''
   },
-  numbers: []
+  numbersList: {
+    isPending: false,
+    numbers: []
+  }
 };

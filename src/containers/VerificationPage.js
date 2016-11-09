@@ -8,6 +8,7 @@ export const VerificationPage = (props) => {
   return (
     <VerificationForm 
       company={props.company}
+      numberList={props.numberList}
     />
   );
 };
@@ -18,7 +19,8 @@ VerificationPage.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    company: state.company
+    company: state.company,
+    numberList: state.numberList
   };
 }
 

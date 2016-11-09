@@ -1,7 +1,7 @@
 const url = 'http://localhost:3010/company';
 
-export const getCompany = (companyId) => (
-    fetch(`${url}/${companyId}`)
+export const getNumbers = (companyId) => (
+    fetch(`${url}/${companyId}/number`)
         .then(function(response) {
             return response.json()
         })

@@ -5,6 +5,7 @@
   ],
   "number": [
     { "id": 1, "number": "445533", "verified": false, "companyId": 1 },
-    { "id": 2, "number": "665523", "verified": false, "companyId": 2 }
+    { "id": 2, "number": "665523", "verified": false, "companyId": 2 },
+    { "id": 3, "number": "445533-3", "verified": true, "companyId": 1 }
   ]
 }
