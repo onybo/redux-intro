@@ -1,39 +1,19 @@
-import * as ActionTypes from '../constants/actionTypes';
-import * as ActionCreators from './companyActions';
+// import * as ActionTypes from '../constants/actionTypes';
+// import * as ActionCreators from './companyActions';
 
-import sinon from 'sinon';
-import sinonChai from 'sinon-chai';
-import MockDate from 'mockdate';
-import chai, { expect } from 'chai';
+// import sinon from 'sinon';
+// import sinonChai from 'sinon-chai';
+// import MockDate from 'mockdate';
+// import chai, { expect } from 'chai';
 
-import dateHelper from '../utils/dateHelper';
+// import dateHelper from '../utils/dateHelper';
 
-chai.use(sinonChai);
+// chai.use(sinonChai);
 
-describe('Actions', () => {
-  let dateModified;
-  before(() => {
-    MockDate.set(new Date());
-    dateModified = dateHelper.getFormattedDateTime();
-  });
-  after(() => MockDate.reset());
+// describe('Actions', () => {
 
-  const appState = {
-    newMpg: 20,
-    tradeMpg: 10,
-    newPpg: 1.50,
-    tradePpg: 1.50,
-    milesDriven: 100,
-    milesDrivenTimeframe: 'week',
-    displayResults: false,
-    dateModified: null,
-    necessaryDataIsProvidedToCalculateSavings: false,
-    savings: {
-      monthly: 0,
-      annual: 0,
-      threeYear: 0
-    }
-  };
+  // const appState = {
+  // };
 
   // it('should create an action to save fuel savings', () => {
   //   const dispatch = sinon.spy();
@@ -66,4 +46,4 @@ describe('Actions', () => {
   //   expect(actual).to.deep.equal(expected); // Notice use of deep because it's a nested object
   //   // expect(actual).to.equal(expected); // Fails. Not deeply equal
   // });
-});
+//});

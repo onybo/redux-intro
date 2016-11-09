@@ -3,7 +3,7 @@ import * as NumbersApi from '../api/numbers';
 
 const loadNumbersFulfilled = (numbers) => ({type: types.LOAD_NUMBERS_FULFILLED, numbers}) ;
 
-const loadNumbersPending = (numbers) => ({type: types.LOAD_NUMBERS_PENDING}) ;
+const loadNumbersPending = () => ({type: types.LOAD_NUMBERS_PENDING}) ;
 
 export function loadNumbers(companyId) {
   return dispatch => {

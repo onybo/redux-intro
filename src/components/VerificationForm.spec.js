@@ -1,10 +1,10 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import {expect} from 'chai';
-import sinon from 'sinon';
+ import {expect} from 'chai';
+// import sinon from 'sinon';
 import VerificationForm from './VerificationForm';
-import FuelSavingsTextInput from './FuelSavingsTextInput';
-import FuelSavingsResults from './FuelSavingsResults';
+//import FuelSavingsTextInput from './FuelSavingsTextInput';
+import NumberList from './NumberList';
 
 describe('<VerificationForm />', () => {
   it('should contain <FuelSavingsTextInput /> components', () => {
@@ -17,10 +17,11 @@ describe('<VerificationForm />', () => {
 
     const wrapper = shallow(<VerificationForm      
       company={company}
+      numberList={{}}
     />);
-    // const allInputs = wrapper.find(FuelSavingsTextInput);
+     const numberList = wrapper.find(NumberList);
 
-    // expect(allInputs).to.be.length(5);
+     expect(numberList).to.be.length(1);
     // expect(allInputs.at(0).props().name).to.equal('newMpg');
     // expect(allInputs.at(0).props().value).to.equal(fuelSavings.newMpg);
     // expect(allInputs.at(1).props().name).to.equal('tradeMpg');

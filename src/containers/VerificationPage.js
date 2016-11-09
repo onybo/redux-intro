@@ -14,7 +14,8 @@ export const VerificationPage = (props) => {
 };
 
 VerificationPage.propTypes = {
-  company: PropTypes.object.isRequired
+  company: PropTypes.object.isRequired,
+  numberList: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {

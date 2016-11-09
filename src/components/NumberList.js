@@ -5,12 +5,14 @@ const NumberList = ({numberList}) =>  {
       <div>
         <h6>Numbers to verify: </h6>
 
-        <table className="table table-bordered">
+        <table className="table table-bordered table-striped">
           <thead>
             <tr>
               <th>number</th>
               <th>verified</th>
             </tr>
+          </thead>
+          <tbody>
             {numberList.numbers.map((n) => {
               return (
                 <tr key={n.id}>
@@ -19,8 +21,6 @@ const NumberList = ({numberList}) =>  {
                 </tr>
               );
             })}
-          </thead>
-          <tbody>
           </tbody>
         </table>
       </div>
