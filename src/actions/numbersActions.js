@@ -16,3 +16,20 @@ export function loadNumbers(companyId) {
     });
   };
 }
+
+const verifyNumberFulfilled = (number) => ({type: types.VERIFY_NUMBER_FULFILLED, number}) ;
+
+const verifyNumberPending = (number) => ({type: types.VERIFY_NUMBER_PENDING, number}) ;
+
+export function verifyNumber(number) {
+  return dispatch => {
+    dispatch(verifyNumberPending(number));
+    return NumbersApi.verifyNumber(number).then(number => {
+      console.log("number verified");
+      console.dir(number);
+      dispatch(verifyNumberFulfilled(number));
+    }).catch(error => {
+      throw(error);
+    });
+  };
+}

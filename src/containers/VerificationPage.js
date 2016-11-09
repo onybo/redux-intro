@@ -1,7 +1,8 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as actions from '../actions/companyActions';
+import * as companyActions from '../actions/companyActions';
+import * as numbersActions from '../actions/numbersActions';
 import VerificationForm from '../components/VerificationForm';
 
 export const VerificationPage = (props) => {
@@ -9,6 +10,7 @@ export const VerificationPage = (props) => {
     <VerificationForm 
       company={props.company}
       numberList={props.numberList}
+      verifyNumber={props.numbersActions.verifyNumber}
     />
   );
 };
@@ -27,7 +29,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(actions, dispatch)
+    companyActions: bindActionCreators(companyActions, dispatch),
+    numbersActions: bindActionCreators(numbersActions, dispatch)
   };
 }
 
