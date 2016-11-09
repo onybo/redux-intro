@@ -1,23 +1,24 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as actions from '../actions/verificationActions';
+import * as actions from '../actions/companyActions';
 import VerificationForm from '../components/VerificationForm';
 
 export const VerificationPage = (props) => {
   return (
-    <VerificationForm />
+    <VerificationForm 
+      company={props.company}
+    />
   );
 };
 
 VerificationPage.propTypes = {
-  actions: PropTypes.object.isRequired,
-  fuelSavings: PropTypes.object.isRequired
+  company: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    fuelSavings: state.fuelSavings
+    company: state.company
   };
 }
 

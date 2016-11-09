@@ -7,11 +7,9 @@ import VerificationForm from '../components/VerificationForm';
 describe('<VerificationPage />', () => {
   it('should contain <VerificationForm />', () => {
     const actions = {
-      saveFuelSavings: () => { },
-      calculateFuelSavings: () => { }
     };
-    const fuelSavings = {};
-    const wrapper = shallow(<VerificationPage actions={actions} fuelSavings={fuelSavings}/>);
+    const company = {};
+    const wrapper = shallow(<VerificationPage actions={actions} company={company}/>);
 
     expect(wrapper.find(VerificationForm)).to.be.length(1);
   });
