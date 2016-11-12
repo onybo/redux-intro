@@ -1,12 +1,23 @@
 export default {
   company: {
-    isPending: false,
-    id: 0,
-    number: '',
-    name: ''
+    id: 1,
+    number: '112233',
+    name: 'Abc Inc'
   },
   numbersList: {
-    isPending: false,
-    numbers: []
+    numbers: [
+      {
+        id: 1,
+        number: 445533,
+        verified: false,
+        companyId: 1
+      },
+      {
+        id: 3,
+        number: 445533,
+        verified: true,
+        companyId: 1
+      }
+    ]
   }
 };

@@ -1,7 +1,6 @@
 import React, {PropTypes} from 'react';
 
-const NumberList = ({numberList, verifyNumber}) =>  {
-    return (
+const NumberList = ({numberList}) =>  (
       <div>
         <h6>Numbers to verify: </h6>
 
@@ -18,11 +17,7 @@ const NumberList = ({numberList, verifyNumber}) =>  {
                 <tr key={n.id}>
                   <td>{n.number}</td>
                   <td>                     
-                      <input type="checkbox" 
-                        checked={n.verified} 
-                        onChange={ () => verifyNumber(n)} 
-                        readOnly={n.isPending} /> 
-                      {n.isPending ? ' update pending' : ''} 
+                      <input type="checkbox" checked={n.verified} />                      
                   </td>
                 </tr>
               );
@@ -31,11 +26,9 @@ const NumberList = ({numberList, verifyNumber}) =>  {
         </table>
       </div>
     );
-  };
 
 NumberList.propTypes = {
-  numberList: PropTypes.object.isRequired,
-  verifyNumber: PropTypes.func.isRequired
+  numberList: PropTypes.object.isRequired
 };
 
 export default NumberList;
