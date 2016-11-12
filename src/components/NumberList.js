@@ -12,19 +12,19 @@ const NumberList = ({numberList, verifyNumber}) =>  (
             </tr>
           </thead>
           <tbody>
-            {numberList.numbers.map((n) => {
-              return (
+            {
+              numberList.numbers.map(n => (
                 <tr key={n.id}>
                   <td>{n.number}</td>
                   <td>                     
                       <input type="checkbox" 
                         checked={n.verified} 
-                        onChange={ () => verifyNumber(n)} 
+                        onChange={() => verifyNumber(n)}
                          /> 
                   </td>
                 </tr>
-              );
-            })}
+              ))
+            }
           </tbody>
         </table>
       </div>

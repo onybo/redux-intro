@@ -4,7 +4,7 @@ export default {
     number: '112233',
     name: 'Abc Inc'
   },
-  numbersList: {
+  numberList: {
     numbers: [
       {
         id: 1,
