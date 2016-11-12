@@ -7,8 +7,27 @@ import './styles/styles.scss'; // Yep, that's right. You can import SASS/CSS fil
 import VerificationForm from './components/VerificationForm';
 import state from './reducers/initialState';
 
-render(
-  <VerificationForm company={state.company} 
-                    numberList={state.numbersList} />
-  , document.getElementById('app')
+const doRender = () => (
+  render(<VerificationForm company={state.company} 
+                    numberList={state.numbersList} 
+                    verifyNumber={ number => verifyNumber(number)}/>
+  , document.getElementById('app'))
 );
+
+doRender();
+
+const verifyNumber = (number) => {
+  state.numbersList.numbers = setNumberVerified(state.numbersList.numbers, number)
+  doRender();
+}
+
+const setNumberVerified = (numbers, n) => {
+  const index = numbers.findIndex(e => e.id === n.id);
+  return (
+  [
+    ...numbers.slice(0, index),
+    Object.assign({}, numbers[index], {verified: !n.verified}),
+    ...numbers.slice(index + 1)
+  ]
+  );
+};
