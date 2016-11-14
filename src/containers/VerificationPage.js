@@ -1,7 +1,6 @@
 import React, {PropTypes, Component} from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as numbersActions from '../actions/numbersActions';
+import {verifyNumber} from '../actions/numbersActions';
 import VerificationForm from '../components/VerificationForm';
 
 export class VerificationPage extends Component {
@@ -10,7 +9,7 @@ export class VerificationPage extends Component {
       <VerificationForm 
         company={this.props.company}
         numberList={this.props.numberList}
-        verifyNumber={this.props.numbersActions.verifyNumber}
+        verifyNumber={this.props.verifyNumber}
     />
     );
   }
@@ -26,22 +25,15 @@ export class VerificationPage extends Component {
 
 VerificationPage.propTypes = {
   company: PropTypes.object.isRequired,
-  numberList: PropTypes.object.isRequired,
-  numbersActions: PropTypes.shape({
-    verifyNumber: PropTypes.func.isRequired
-  }).isRequired
+  numberList: PropTypes.object.isRequired,  
+  verifyNumber: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({
   company: state.company,
   numberList: state.numberList
 });
-
-const mapDispatchToProps = (dispatch) => ({
-  numbersActions: bindActionCreators(numbersActions, dispatch)
-});
   
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(VerificationPage);
+export default connect(mapStateToProps, {
+  verifyNumber: verifyNumber.request
+})(VerificationPage);

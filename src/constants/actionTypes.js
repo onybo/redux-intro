@@ -1,2 +1,4 @@
-export const VERIFY_NUMBER = 'VERIFY_NUMBER';
+export const REQUEST = 'REQUEST';
+export const SUCCESS = 'SUCCESS';
+export const FAILURE = 'FAILURE';
 
