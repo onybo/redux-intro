@@ -1,12 +1,10 @@
 import { combineReducers } from 'redux';
-import company from './companyReducer';
 import numberList from './numbersReducer';
-import {routerReducer} from 'react-router-redux';
+import company from './companyReducer';
 
 const rootReducer = combineReducers({
-  company,
   numberList,
-  routing: routerReducer
+  company
 });
 
 export default rootReducer;

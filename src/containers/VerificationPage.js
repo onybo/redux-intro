@@ -1,40 +1,39 @@
-import React, {PropTypes} from 'react';
+import React, {PropTypes, Component} from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as companyActions from '../actions/companyActions';
-import * as numbersActions from '../actions/numbersActions';
+import {verifyNumber} from '../actions/numbersActions';
 import VerificationForm from '../components/VerificationForm';
 
-export const VerificationPage = (props) => {
-  return (
-    <VerificationForm 
-      company={props.company}
-      numberList={props.numberList}
-      verifyNumber={props.numbersActions.verifyNumber}
+export class VerificationPage extends Component {
+  render() {
+    return (
+      <VerificationForm 
+        company={this.props.company}
+        numberList={this.props.numberList}
+        verifyNumber={this.props.verifyNumber}
     />
-  );
-};
+    );
+  }
+}
+
+// const VerificationPageF = (props) => (
+//       <VerificationForm 
+//         company={this.props.company}
+//         numberList={this.props.numberList}
+//         verifyNumber={this.props.numbersActions.verifyNumber}
+//     />
+//     );
 
 VerificationPage.propTypes = {
   company: PropTypes.object.isRequired,
-  numberList: PropTypes.object.isRequired
+  numberList: PropTypes.object.isRequired,  
+  verifyNumber: PropTypes.func.isRequired
 };
 
-function mapStateToProps(state) {
-  return {
-    company: state.company,
-    numberList: state.numberList
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    companyActions: bindActionCreators(companyActions, dispatch),
-    numbersActions: bindActionCreators(numbersActions, dispatch)
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(VerificationPage);
+const mapStateToProps = (state) => ({
+  company: state.company,
+  numberList: state.numberList
+});
+  
+export default connect(mapStateToProps, {
+  verifyNumber: verifyNumber.request
+})(VerificationPage);

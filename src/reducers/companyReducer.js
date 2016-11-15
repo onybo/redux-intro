@@ -1,5 +1,5 @@
-import {LOAD_COMPANY_PENDING, LOAD_COMPANY_FULFILLED} from '../constants/actionTypes';
-import objectAssign from 'object-assign';
+// import {VERIFY_NUMBER} from '../constants/actionTypes';
+// import objectAssign from 'object-assign';
 import initialState from './initialState';
 
 // IMPORTANT: Note that with Redux, state should NEVER be changed.
@@ -9,15 +9,7 @@ import initialState from './initialState';
 // and update values on the copy.
 export default function companyReducer(state = initialState.company, action) {
 
-  switch (action.type) {
-    case LOAD_COMPANY_PENDING:
-      // For this example, just simulating a save by changing date modified.
-      // In a real app using Redux, you might use redux-thunk and handle the async call in fuelSavingsActions.js
-      return objectAssign({}, state, {isPending: true});
-
-    case LOAD_COMPANY_FULFILLED:
-      return objectAssign({}, state, action.company, {isPending: false});
-
+  switch (action.type) {    
     default:
       return state;
   }

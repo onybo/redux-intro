@@ -18,6 +18,7 @@ describe('<VerificationForm />', () => {
     const wrapper = shallow(<VerificationForm      
       company={company}
       numberList={{}}
+      verifyNumber={() => 0}
     />);
      const numberList = wrapper.find(NumberList);
 

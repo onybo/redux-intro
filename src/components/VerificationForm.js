@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react';
 import NumberList from './NumberList';
 
 const VerificationForm = ({company, numberList, verifyNumber}) =>  {
+  console.log('rendering VerificationForm'); // eslint-disable-line no-console
     return (
       <div>
         <h2>Verify the numbers</h2>

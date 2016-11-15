@@ -6,11 +6,10 @@ import VerificationForm from '../components/VerificationForm';
 
 describe('<VerificationPage />', () => {
   it('should contain <VerificationForm />', () => {
-    const actions = {
-    };
+    const verifyNumber = () => 0;
     const company = {};
-    const wrapper = shallow(<VerificationPage actions={actions} company={company}/>);
-
+    const wrapper = shallow(<VerificationPage numberList={{}} company={company} 
+        verifyNumber={verifyNumber}/>);
     expect(wrapper.find(VerificationForm)).to.be.length(1);
   });
 });

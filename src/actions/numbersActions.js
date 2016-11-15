@@ -1,35 +1,19 @@
-import * as types from '../constants/actionTypes';
-import * as NumbersApi from '../api/numbers';
+import { REQUEST, SUCCESS, FAILURE } from '../constants/actionTypes';
 
-const loadNumbersFulfilled = (numbers) => ({type: types.LOAD_NUMBERS_FULFILLED, numbers}) ;
+const createRequestTypes = (base) => (
+  [REQUEST, SUCCESS, FAILURE].reduce((acc, type) => {
+    acc[type] = `${base}_${type}`;
+    return acc;
+  }, {})
+);
 
-const loadNumbersPending = () => ({type: types.LOAD_NUMBERS_PENDING}) ;
+export const VERIFY_NUMBER = createRequestTypes('VERIFY_NUMBER');
 
-export function loadNumbers(companyId) {
-  return dispatch => {
-    dispatch(loadNumbersPending());
-    return NumbersApi.getNumbers(companyId).then(numbers => {
-      console.dir(numbers);
-      dispatch(loadNumbersFulfilled(numbers));
-    }).catch(error => {
-      throw(error);
-    });
-  };
-}
+const action = (type, payload = {}) => ({type, ...payload});
 
-const verifyNumberFulfilled = (number) => ({type: types.VERIFY_NUMBER_FULFILLED, number}) ;
+export const verifyNumber = {
+  request: number => action(VERIFY_NUMBER.REQUEST, {number}),
+  success: (number) => action(VERIFY_NUMBER.SUCCESS, {number}),
+  failure: (number, error) => action(VERIFY_NUMBER.FAILURE, {number, error}),
+};
 
-const verifyNumberPending = (number) => ({type: types.VERIFY_NUMBER_PENDING, number}) ;
-
-export function verifyNumber(number) {
-  return dispatch => {
-    dispatch(verifyNumberPending(number));
-    return NumbersApi.verifyNumber(number).then(number => {
-      console.log("number verified");
-      console.dir(number);
-      dispatch(verifyNumberFulfilled(number));
-    }).catch(error => {
-      throw(error);
-    });
-  };
-}
